@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.demo</groupId>
+	<artifactId>demo-mall</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>demo-mall</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.java>1.8</version.java>
+		<version.junit>4.11</version.junit>
+		<version.demo.common>0.0.1-SNAPSHOT</version.demo.common>
+		<version.demo.base.api>0.0.1-SNAPSHOT</version.demo.base.api>
+		<version.demo.base.server>0.0.1-SNAPSHOT</version.demo.base.server>
+		<version.demo.base.web>0.0.1-SNAPSHOT</version.demo.base.web>
+	</properties>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${version.java}</source>
+						<target>${version.java}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${version.junit}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>demo-common</artifactId>
+				<version>${version.demo.common}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>demo-common</artifactId>
+				<version>${version.demo.base.api}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>demo-common</artifactId>
+				<version>${version.demo.base.server}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>demo-common</artifactId>
+				<version>${version.demo.base.web}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<modules>
+		<module>demo-common</module>
+		<module>demo-base</module>
+    <module>demo-merchant</module>
+  </modules>
+</project>
