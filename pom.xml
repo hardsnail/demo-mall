@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.demo</groupId>
 	<artifactId>demo-mall</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.6.RELEASE</version>
+    </parent>
 
 	<name>demo-mall</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.java>1.8</version.java>
+		<version.jdk>1.8</version.jdk>
 		<version.junit>4.11</version.junit>
 		<version.demo.common>0.0.1-SNAPSHOT</version.demo.common>
 		<version.demo.base.api>0.0.1-SNAPSHOT</version.demo.base.api>
 		<version.demo.base.server>0.0.1-SNAPSHOT</version.demo.base.server>
 		<version.demo.base.web>0.0.1-SNAPSHOT</version.demo.base.web>
+		<version.spring>4.3.10.RELEASE</version.spring>
+		<version.spring.boot>1.5.6.RELEASE</version.spring.boot>
+		<spring-data-releasetrain.version>Fowler-SR2</spring-data-releasetrain.version>
 	</properties>
 	<build>
 		<pluginManagement>
@@ -26,8 +36,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>${version.java}</source>
-						<target>${version.java}</target>
+						<source>${version.jdk}</source>
+						<target>${version.jdk}</target>
 						<encoding>${project.build.sourceEncoding}</encoding>
 					</configuration>
 				</plugin>
@@ -49,24 +59,49 @@
 			</dependency>
 			<dependency>
 				<groupId>com.demo</groupId>
-				<artifactId>demo-common</artifactId>
+				<artifactId>demo-base-api</artifactId>
 				<version>${version.demo.base.api}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.demo</groupId>
-				<artifactId>demo-common</artifactId>
+				<artifactId>demo-base-server</artifactId>
 				<version>${version.demo.base.server}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.demo</groupId>
-				<artifactId>demo-common</artifactId>
+				<artifactId>demo-base-web</artifactId>
 				<version>${version.demo.base.web}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-releasetrain</artifactId>
+				<version>Fowler-SR2</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.5.6.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${version.spring.boot}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${version.spring}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<modules>
 		<module>demo-common</module>
 		<module>demo-base</module>
-    <module>demo-merchant</module>
-  </modules>
+		<module>demo-merchant</module>
+		<module>demo-user</module>
+	</modules>
 </project>
