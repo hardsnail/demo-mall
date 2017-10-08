@@ -7,27 +7,30 @@
 	<artifactId>demo-mall</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	
+
 	<parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.6.RELEASE</version>
-    </parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+	</parent>
 
 	<name>demo-mall</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.jdk>1.8</version.jdk>
+		<jdk.version>1.8</jdk.version>
 		<version.junit>4.11</version.junit>
-		<version.demo.common>0.0.1-SNAPSHOT</version.demo.common>
-		<version.demo.base.api>0.0.1-SNAPSHOT</version.demo.base.api>
-		<version.demo.base.server>0.0.1-SNAPSHOT</version.demo.base.server>
-		<version.demo.base.web>0.0.1-SNAPSHOT</version.demo.base.web>
-		<version.spring>4.3.10.RELEASE</version.spring>
-		<version.spring.boot>1.5.6.RELEASE</version.spring.boot>
+		<demo-common.version>0.0.1-SNAPSHOT</demo-common.version>
+		<demo-base-api.version>0.0.1-SNAPSHOT</demo-base-api.version>
+		<demo-base-server.version>0.0.1-SNAPSHOT</demo-base-server.version>
+		<demo-base-web.version>0.0.1-SNAPSHOT</demo-base-web.version>
+		<spring-version>4.3.10.RELEASE</spring-version>
+		<spring-boot.version>1.5.6.RELEASE</spring-boot.version>
 		<spring-data-releasetrain.version>Fowler-SR2</spring-data-releasetrain.version>
+		<mybatis.version>3.4.5</mybatis.version>
+		<druid.version>1.1.4</druid.version>
+		<mysql-connector-java.version>5.1.35</mysql-connector-java.version>
 	</properties>
 	<build>
 		<pluginManagement>
@@ -36,8 +39,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>${version.jdk}</source>
-						<target>${version.jdk}</target>
+						<source>${jdk.version}</source>
+						<target>${jdk.version}</target>
 						<encoding>${project.build.sourceEncoding}</encoding>
 					</configuration>
 				</plugin>
@@ -55,22 +58,22 @@
 			<dependency>
 				<groupId>com.demo</groupId>
 				<artifactId>demo-common</artifactId>
-				<version>${version.demo.common}</version>
+				<version>${demo-common.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.demo</groupId>
 				<artifactId>demo-base-api</artifactId>
-				<version>${version.demo.base.api}</version>
+				<version>${demo-base-api.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.demo</groupId>
 				<artifactId>demo-base-server</artifactId>
-				<version>${version.demo.base.server}</version>
+				<version>${demo-base-server.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.demo</groupId>
 				<artifactId>demo-base-web</artifactId>
-				<version>${version.demo.base.web}</version>
+				<version>${demo-base-web.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
@@ -89,13 +92,29 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
-				<version>${version.spring.boot}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
-				<version>${version.spring}</version>
+				<version>${spring-version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql-connector-java.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 	<modules>

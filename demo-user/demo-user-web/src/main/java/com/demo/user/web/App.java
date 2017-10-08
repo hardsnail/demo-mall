@@ -1,16 +1,14 @@
 package com.demo.user.web;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-import com.demo.user.web.controller.UserController;
-
-@EnableAutoConfiguration
-@Configuration
+@SpringBootApplication
+@ComponentScan(basePackages = { "com.demo.*" })
 public class App {
 	public static void main(String[] args) {
-		Object[] classes = new Object[]{App.class, UserController.class};
+		Object[] classes = new Object[] { App.class };
 		SpringApplication.run(classes, args);
 	}
 }
