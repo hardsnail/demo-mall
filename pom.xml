@@ -22,6 +22,7 @@
 		<jdk.version>1.8</jdk.version>
 		<version.junit>4.11</version.junit>
 		<demo-common.version>0.0.1-SNAPSHOT</demo-common.version>
+		<demo-ext-spring.version>0.0.1-SNAPSHOT</demo-ext-spring.version>
 		<demo-base-api.version>0.0.1-SNAPSHOT</demo-base-api.version>
 		<demo-base-server.version>0.0.1-SNAPSHOT</demo-base-server.version>
 		<demo-base-web.version>0.0.1-SNAPSHOT</demo-base-web.version>
@@ -32,6 +33,7 @@
 		<mybatis-spring.version>1.3.1</mybatis-spring.version>
 		<druid.version>1.1.4</druid.version>
 		<mysql-connector-java.version>5.1.35</mysql-connector-java.version>
+		<jackson-databind.version>2.8.9</jackson-databind.version>
 	</properties>
 	<build>
 		<pluginManagement>
@@ -43,6 +45,17 @@
 						<source>${jdk.version}</source>
 						<target>${jdk.version}</target>
 						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+					<configuration>
+						<delimiters>
+							<delimiter>@</delimiter>
+						</delimiters>
+						<useDefaultDelimiters>false</useDefaultDelimiters>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -60,6 +73,11 @@
 				<groupId>com.demo</groupId>
 				<artifactId>demo-common</artifactId>
 				<version>${demo-common.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.demo</groupId>
+				<artifactId>demo-ext-spring</artifactId>
+				<version>${demo-ext-spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.demo</groupId>
@@ -133,6 +151,12 @@
 				<version>${mysql-connector-java.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson-databind.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 	<modules>
@@ -140,5 +164,6 @@
 		<module>demo-base</module>
 		<module>demo-merchant</module>
 		<module>demo-user</module>
+		<module>demo-ext</module>
 	</modules>
 </project>

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -15,13 +16,14 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 
 @Configuration
 @EnableTransactionManagement
+@AutoConfigureAfter(DataSourceConfig.class)
 public class MybatisConfig implements TransactionManagementConfigurer {
 
 	@Autowired
 	public DataSource dataSource;
 
-	@Bean
-	public SqlSessionFactory getSqlSessionFactory() {
+	@Bean("sqlSessionFactory")
+	public SqlSessionFactory sqlSessionFactory() {
 		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
 		bean.setDataSource(dataSource);
 		try {
