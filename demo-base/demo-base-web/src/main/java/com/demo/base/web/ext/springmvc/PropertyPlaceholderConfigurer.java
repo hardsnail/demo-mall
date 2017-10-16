@@ -1,4 +1,4 @@
-package com.demo.ext.spring.configurer;
+package com.demo.base.web.ext.springmvc;
 
 import java.io.IOException;
 import java.util.Properties;
