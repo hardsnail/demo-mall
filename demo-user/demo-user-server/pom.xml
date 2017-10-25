@@ -38,10 +38,20 @@
 		</profile>
 	</profiles>
 	<build>
+		<finalName>userServer</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
+				<includes>
+					<include>*.yml</include>
+				</includes>
+				<filtering>false</filtering>
 			</resource>
 		</resources>
 	</build>
@@ -52,7 +62,19 @@
 		</dependency>
 		<dependency>
 			<groupId>com.demo</groupId>
-			<artifactId>demo-base-server</artifactId>
+			<artifactId>demo-user-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.demo</groupId>
+			<artifactId>demo-ext-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

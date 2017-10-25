@@ -7,11 +7,11 @@ public class UserDTO implements Serializable{
 
 	private static final long serialVersionUID = -6733100728077775487L;
 
-	public Long id;
+	private Long id;
 	
-	public String name;
+	private String name;
 	
-	public Date registerDate;
+	private Date registerDate;
 
 	public Long getId() {
 		return id;

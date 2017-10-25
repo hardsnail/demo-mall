@@ -5,23 +5,37 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.demo</groupId>
-		<artifactId>demo-user</artifactId>
+		<artifactId>demo-mall</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>demo-user-api</artifactId>
-	<name>demo-user-api</name>
+	<artifactId>demo-mall-eureka</artifactId>
+	<name>demo-mall-eureka</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<build>
+		<finalName>demoMallEureka</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>*.yml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+	</build>
 	<dependencies>
 		<dependency>
-			<groupId>com.demo</groupId>
-			<artifactId>demo-base-api</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-feign</artifactId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

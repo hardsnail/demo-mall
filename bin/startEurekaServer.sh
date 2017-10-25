@@ -1,0 +1,1 @@
+java -jar ../demo-mall-eureka/target/demoMallEureka.jar

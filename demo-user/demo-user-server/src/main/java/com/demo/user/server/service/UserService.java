@@ -9,4 +9,7 @@ public interface UserService {
 	@Transactional
 	public int insert(User user);
 	
+	
+	@Transactional
+	public int insertTwoUser(User user);
 }
